@@ -1,7 +1,10 @@
 class WeatherController < ApplicationController
 
     def test
-        render json: "hello"
+
+        response = RestClient.get("https://www.metaweather.com/api/location/search/?query=san")
+
+        render json: response
     end
 
 end

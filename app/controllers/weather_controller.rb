@@ -2,6 +2,7 @@ class WeatherController < ApplicationController
 
     def test
 
+        # San Francisco
         response = RestClient.get("https://www.metaweather.com/api/location/2487956/")
 
         render json: response

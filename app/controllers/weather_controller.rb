@@ -10,10 +10,10 @@ class WeatherController < ApplicationController
 
     def search
     
-        query = ["term"]
+        query = params["term"]
 
         locate = RestClient.get("https://www.metaweather.com/api/location/search/?query=#{query}")
-
+        
         jsonResponse = JSON.parse(locate.body)
         locationId = jsonResponse.first["woeid"]
 
